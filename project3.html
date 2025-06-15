@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Quick Crave Navbar Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .navbar-custom {
+        padding: 1rem 1.5rem;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #e03546;
+      }
+
+      .location-dropdown {
+        border: none;
+        background: transparent;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .search-bar {
+        width: 100%;
+        max-width: 500px;
+        border: none;
+        box-shadow: none;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      .nav-links .nav-item {
+        margin: 0 20px;
+        text-align: center;
+      }
+
+      .nav-links .nav-link.active {
+        color: #e03546;
+        font-weight: 600;
+        border-bottom: 2px solid #e03546;
+      }
+
+      .nav-links .nav-link {
+        color: #495057;
+        font-weight: 500;
+      }
+
+      .nav-icon {
+        display: block;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom">
+      <a class="navbar-brand" href="#">Quick Crave</a>
+
+      <!-- Location Dropdown and Search -->
+      <div class="ml-4 d-flex align-items-center w-100">
+        <div class="dropdown mr-2">
+          <button class="btn location-dropdown dropdown-toggle" type="button" id="locationDropdown"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Vijayawada
+          </button>
+          <div class="dropdown-menu" aria-labelledby="locationDropdown">
+            <a class="dropdown-item" href="#">Hyderabad</a>
+            <a class="dropdown-item" href="#">Bangalore</a>
+            <a class="dropdown-item" href="#">Chennai</a>
+            <a class="dropdown-item" href="#">Delhi</a>
+          </div>
+        </div>
+
+        <div class="input-group search-bar">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-white border-right-0">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control border-left-0" placeholder="Search for restaurant, cuisine or a dish">
+        </div>
+      </div>
+
+      <!-- Right side: Log In & Sign Up -->
+      <div class="ml-auto d-none d-lg-flex">
+        <a href="#" class="nav-link btn btn- dark">Log in</a>
+        <a href="#" class="nav-link btn btn-dark">Sign up</a>
+      </div>
+    </nav>
+
+    <!-- Secondary Nav -->
+    <div class=" container nav-links">
+      <div class=" nav-link ">
+        <a href="#" class="nav-link">
+          <img src="https://img.icons8.com/ios/50/000000/meal.png" class="nav-icon" width="32" alt="Dining">
+          Dining Out
+        </a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">
+          <img
+            src="https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp"
+            class="nav-icon" width="32" alt="Delivery">
+          Delivery
+        </a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          <img src="https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp" 
+          class="nav-icon" width="32" alt="Nightlife">
+          Nightlife
+        </a>
+      </div>
+    </div>
+
+    <!-- Optional JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </body>
+
+  </html>
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      margin: 30px 0;
+    }
+
+    .food-scroll {
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding: 20px 40px;
+    }
+
+    .food-item {
+      display: inline-block;
+      text-align: center;
+      margin-right: 25px;
+    }
+
+    .food-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .food-label {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-left {
+      left: 10px;
+    }
+
+    .scroll-right {
+      right: 10px;
+    }
+
+    .carousel-heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: -15px;
+      padding-left: 40px;
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <div class="container mt-3">
+  <div class="d-flex flex-row flex-wrap">
+
+    <!-- Filters Button -->
+    <button type="button" class="btn btn-outline-secondary mr-2 rounded-pill">
+      <i class="fas fa-sliders-h mr-1"></i> Filters
+    </button>
+
+    <!-- Pure Veg Button -->
+    <button type="button" class="btn btn-outline-secondary mr-2 rounded-pill">
+      Pure Veg
+    </button>
+         <!-- Cuisines Dropdown -->
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" id="cuisineDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Cuisines
+      </button>
+      <div class="dropdown-menu" aria-labelledby="cuisineDropdown">
+        <a class="dropdown-item" href="#">Indian</a>
+        <a class="dropdown-item" href="#">Chinese</a>
+        <a class="dropdown-item" href="#">Italian</a>
+        <!-- Add more items as needed -->
+      </div>
+    </div>
+
+  
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="carousel-heading">Inspiration for your first order</div>
+      <div class="carousel-wrapper">
+        <button class="scroll-btn scroll-left" onclick="scrollLeft()">&#8249;</button>
+        <div class="food-scroll" id="foodScroll">
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/dish_photos/bf0/f0891fc34faed365907425767d4a0bf0.jpg" alt="Tiffin">
+            <div class="food-label">Tiffin</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/dish_images/d9766dd91cd75416f4f65cf286ca84331634805483.png" alt="Idli">
+            <div class="food-label">Idli</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/dish_photos/4e8/dc0c86b5eda48072b616f920955f84e8.jpg" alt="Poori">
+            <div class="food-label">Poori</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/o2_assets/bf4bde7b78d517ac8460ea03d4c64a7f1632716550.png" alt="Vada">
+            <div class="food-label">Vada</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/o2_assets/bf2d0e73add1c206aeeb9fec762438111727708719.png" alt="Biryani">
+            <div class="food-label">Biryani</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/o2_assets/d0c68372932bf3f93acd9e1c52116cdf1632716606.png" alt="Pakoda">
+            <div class="food-label">Pakoda</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/dish_photos/bda/9cdab6d5f275b8d2532e3878134ddbda.jpg" alt="Veg Meal">
+            <div class="food-label">Veg Meal</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" alt="Thali">
+            <div class="food-label">Thali</div>
+          </div>
+          <div class="food-item">
+            <img src="https://b.zmtcdn.com/data/o2_assets/e444ade83eb22360b6ca79e6e777955f1632716661.png"
+              alt="Fried rice">
+            <div class="food-label">Fried Rice</div>
+          </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollRight()">&#8250;</button>
+      </div>
+    </div>
+
+    <script>
+      function scrollLeft() {
+        document.getElementById('foodScroll').scrollBy({ left: -300, behavior: 'smooth' });
+      }
+
+      function scrollRight() {
+        document.getElementById('foodScroll').scrollBy({ left: 300, behavior: 'smooth' });
+      }
+    </script>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <title>Top Brands Carousel</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+          background-color: #fff;
+        }
+
+        .carousel-wrapper {
+          position: relative;
+          margin: 40px 0;
+        }
+
+        .brand-scroll {
+          overflow-x: auto;
+          white-space: nowrap;
+          scroll-behavior: smooth;
+          padding: 20px 50px;
+        }
+
+        .brand-item {
+          display: inline-block;
+          text-align: center;
+          margin-right: 30px;
+          width: 120px;
+        }
+
+        .brand-item img {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 50%;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          background: #fff;
+        }
+
+        .brand-name {
+          margin-top: 10px;
+          font-weight: 500;
+        }
+
+        .brand-time {
+          font-size: 0.9rem;
+          color: #555;
+        }
+
+        .scroll-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #fff;
+          border: none;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          width: 36px;
+          height: 36px;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .scroll-left {
+          left: 10px;
+        }
+
+        .scroll-right {
+          right: 10px;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-left: 50px;
+          margin-bottom: -5px;
+        }
+      </style>
+    </head>
+
+    <body>
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+        <meta charset="UTF-8">
+        <title>Top Brands Carousel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+          .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+          }
+
+          .carousel-wrapper {
+            position: relative;
+          }
+
+          .brand-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            padding: 20px 50px;
+          }
+
+          .brand-item {
+            display: inline-block;
+            text-align: center;
+            width: 120px;
+            margin-right: 30px;
+          }
+
+          .brand-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+          }
+
+          .brand-name {
+            font-weight: 500;
+            margin-top: 10px;
+          }
+
+          .brand-time {
+            font-size: 0.9rem;
+            color: #555;
+          }
+
+          .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+          }
+
+          .scroll-left {
+            left: 5px;
+          }
+
+          .scroll-right {
+            right: 5px;
+          }
+        </style>
+      </head>
+
+      <body>
+
+        <div class="container">
+          <div class="section-title">Top brands for you</div>
+          <div class="carousel-wrapper">
+            <button class="scroll-btn scroll-left" onclick="scrollLeft()">&#8249;</button>
+            <div class="brand-scroll" id="brandScroll">
+
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/a26f052ef077657c7cec4bf339cab0431714746742.png?output-format=webp"
+                  alt="RR Durbar">
+                <div class="brand-name">RR Durbar</div>
+                <div class="brand-time">37 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/a6927d83d9185b7788814049b4a9fc8c_1726602259.png?output-format=webp"
+                  alt="Burger King">
+                <div class="brand-name">Burger King</div>
+                <div class="brand-time">22 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/2716957270755f03e422e4cf4ea95bc3_1605113830.png?output-format=webp"
+                  alt="Sweet Magic">
+                <div class="brand-name">Sweet Magic</div>
+                <div class="brand-time">22 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/9362d01413f22bff237e0b58079a530d_1605117887.png?output-format=webp"
+                  alt="Sri Anjaneya">
+                <div class="brand-name">Sri Anjaneya</div>
+                <div class="brand-time">19 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/9742d760cf95e9dbf9b869ca9c753f8f_1613214172.png?output-format=webp"
+                  alt="Pizza Hut">
+                <div class="brand-name">Pizza Hut</div>
+                <div class="brand-time">41 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/99543b81ca6351d54bbd14db2eeccc02_1735895030.png?output-format=webp"
+                  alt="LunchBox">
+                <div class="brand-name">LunchBox</div>
+                <div class="brand-time">29 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/4638a7188a51f7c7f3a1a80956d8612f_1550465419.png?output-format=webp"
+                  alt="Frozen bottle">
+                <div class="brand-name">Frozen bottle</div>
+                <div class="brand-time">16 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/1a4d99dc93d52a053685b9e7c132a06f_1728909088.png?output-format=webp"
+                  alt="Cake Zone">
+                <div class="brand-name">Cake Zone</div>
+                <div class="brand-time">29 min</div>
+              </div>
+              <div class="brand-item">
+                <img
+                  src="https://b.zmtcdn.com/data/brand_creatives/logos/47c22bbd5043ef52b80a4e3d3409a368_1626811051.png?output-format=webp"
+                  alt="Behrouz Biryani">
+                <div class="brand-name">Behrouz Biryani</div>
+                <div class="brand-time">35 min</div>
+              </div>
+
+            </div>
+            <button class="scroll-btn scroll-right" onclick="scrollRight()">&#8250;</button>
+          </div>
+        </div>
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+  <style>
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+
+    .discount-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+
+    .promoted-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 11px;
+      padding: 2px 5px;
+      border-radius: 2px;
+    }
+
+    .card {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h3>Vijayawada Restaurants</h3>
+    <div class="row">
+      <!-- Card 1 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/3/18697703/c062575bc1407e8260065a45258a4de8_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Sweet Magic" >
+                     <span class="promoted-tag">Promoted</span>
+                      <span class="discount-badge">₹100 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Sweet Magic</h5>
+                    <p class="mb-1 text-muted">South Indian</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.7★</span>
+                      <small class="text-muted">23 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/1/21196091/4e8f973a7b6ec569f90f2c406cdbeb7f_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Benguluru Bavan">
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Benguluru Bavan</h5>
+                    <p class="mb-1 text-muted">South Indian,Chinese</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.3★</span>
+                      <small class="text-muted">27 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/5/20745635/7943d61a62bf985a03d64b61152d025f_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Hoskote 4AM Biryani">
+                     <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Hoskote 4AM Biryani</h5>
+                    <p class="mb-1 text-muted">Biryani</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">21 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/chains/7/18697107/c3cec769404d2890de1ce7aa338eeb2c_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Sri Anjaneya Restaurant">
+                     <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Sri Anjaneya Restaurant</h5>
+                    <p class="mb-1 text-muted">Biryani,North Indian,Chinese</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.9★</span>
+                      <small class="text-muted">24 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 5 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/6/18697116/2af39a756f05178e5da92546b4214544_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Good Morning Tea and FastFoods ">
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Good Morning Tea and FastFoods</h5>
+                    <p class="mb-1 text-muted">South Indian,Andhra</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">22 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 6 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/7/19857387/bc580c2051a60fbc649850751640c9b6_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Cake Zone">
+                     <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹125 OFF</span>
+                  <div class="card-body d-flex flex-column justify-content-between align-items-top">
+                    <h5 class="card-title mb-1">Cake Zone</h5>
+                    <p class="mb-1 text-muted">Bakery,Desserts,Mitai</p>
+                    <p class="mb-1">₹100 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.4★</span>
+                      <small class="text-muted">31 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 7 -->
+               
+                <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/7/18698067/3849aafaeafdfa733f23f7e70fb608ab_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Pizza Hut">
+                  <span class="discount-badge">₹100 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Pizza Hut</h5>
+                    <p class="mb-1 text-muted">Pizza,Fast Food</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.9★</span>
+                      <small class="text-muted">23 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 8 -->
+               
+               <div class=" col-sm-6 col-md-4  mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/chains/3/19829103/8ad78ef0b2a8014b99f1320e49244753_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="Andhra Rice Bowl">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Andhra Rice Bowl</h5>
+                    <p class="mb-1 text-muted">South Indian</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.9★</span>
+                      <small class="text-muted">21 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 9 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <div class="card h-100 shadow-sm"></div>
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/8/19543358/50d39d70a5fa2e38f9316fed621d80b8_o2_featured_v2.jpg?output-format=webp"
+                    class="card-img-top" alt="PUBG's Restaurants">
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">PUBG'S Restaurants</h5>
+                    <p class="mb-1 text-muted">Biryani,chinese</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">30 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 10 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/5/18697235/cc8f83eb4e1cb9421c88bfb16fb7a82e_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Burger king">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹150 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Burger King</h5>
+                    <p class="mb-1 text-muted">Burger,Fast Foods,Beverages</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.1★</span>
+                      <small class="text-muted">25 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 11 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/0/19739850/dbe2cb5cbc61b00588ab4917f741776a_o2_featured_v2.jpg"
+                    class="card-img-top" alt="RR Pulka point">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">RR Pulka point</h5>
+                    <p class="mb-1 text-muted">North Indian,Andhra</p>
+                    <p class="mb-1">₹100 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">30 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 12 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/4/18760454/51e2e8230a40752b7018f7367fa13dfa_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Domino's Pizza">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹150 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Domino's pizza</h5>
+                    <p class="mb-1 text-muted">Pizza,Italian,Pasta</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.5★</span>
+                      <small class="text-muted">35 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 13 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/chains/2/18697002/946e14765eaf8b687f68f1ceddf45476_o2_featured_v2.jpg"
+                    class="card-img-top" alt="RR's Durbar">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹175 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">RR's Durbar
+                      <p class="mb-1 text-muted">Biryani,chinese</p>
+                      <p class="mb-1">₹400 for one</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-success">4.0★</span>
+                        <small class="text-muted">35 min</small>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 14 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/1/18699841/818de1d37ec1bda7d23dd3f93c75d02e_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Paradise Biryani">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹180 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Paradise biryani</h5>
+                    <p class="mb-1 text-muted">North Indian,kababs</p>
+                    <p class="mb-1">₹300 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.0★</span>
+                      <small class="text-muted">30 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 15 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/1/21196091/4e8f973a7b6ec569f90f2c406cdbeb7f_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Benguluru Bhavan">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Benguluru Bhavan</h5>
+                    <p class="mb-1 text-muted">south Indian,Chinese</p>
+                    <p class="mb-1">₹100 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.3★</span>
+                      <small class="text-muted">19 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 16 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/2/19608252/dcde4a25f1935fb2ae011468bcadacae_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Anjaneya Family Restaurant">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Anjaneya Family Restaurant</h5>
+                    <p class="mb-1 text-muted">south Indian,Chinese</p>
+                    <p class="mb-1">₹250 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">3.5★</span>
+                      <small class="text-muted">27 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 17 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/6/18697116/2af39a756f05178e5da92546b4214544_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Good morning Tea&Fast Food">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹25 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Good morning Tea & Fast food</h5>
+                    <p class="mb-1 text-muted">south Indian,Chinese</p>
+                    <p class="mb-1">₹150 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">26 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 18 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/5/20745635/7943d61a62bf985a03d64b61152d025f_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Hotel 4 AM Biryani">
+                  <span class="promoted-tag">Promoted</span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Hotel 4 AM Biryani</h5>
+                    <p class="mb-1 text-muted">south Indian</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.2★</span>
+                      <small class="text-muted">24 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 19 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/6/21529486/f7270693767b8d252ac1ac4e3de2f41f_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Udipi Tiffins and Meals">
+                  <span class="promoted-tag"></span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Udipi Tiffins and Meals</h5>
+                    <p class="mb-1 text-muted">south Indian,Chinese</p>
+                    <p class="mb-1">₹100 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.1★</span>
+                      <small class="text-muted">34 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 20 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/9/19862229/9d8ecd379d96f8f05748fdcde5875abb_o2_featured_v2.jpg"
+                    class="card-img-top" alt="Bucket Biryani">
+                  <span class="promoted-tag"></span>
+                  <span class="discount-badge">₹50 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">Bucket Biryani</h5>
+                    <p class="mb-1 text-muted">Biryani,Chinese</p>
+                    <p class="mb-1">₹200 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">2.8★</span>
+                      <small class="text-muted">25 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 21 -->
+              <div class=" col-sm-6 col-md-4 mb-4">
+                <div class="card position-relative">
+                  <img
+                    src="https://b.zmtcdn.com/data/pictures/8/20603058/e92a1bd69fb8ba8ecc0e6c8c373afad4_o2_featured_v2.jpg"
+                    class="card-img-top" alt="New Welcome Fast Food">
+                  <span class="promoted-tag"></span>
+                  <span class="discount-badge">₹175 OFF</span>
+                  <div class="card-body">
+                    <h5 class="card-title mb-1">New Welcome Fast Food</h5>
+                    <p class="mb-1 text-muted">south Indian,Chinese</p>
+                    <p class="mb-1">₹100 for one</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="badge badge-success">4.3★</span>
+                      <small class="text-muted">18 min</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!DOCTYPE html>
+              <html lang="en">
+
+              <head>
+                <meta charset="UTF-8">
+                <title>End of Search Results</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+                <style>
+                  .end-result-container {
+                    min-height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                  }
+
+                  .end-result-text {
+                    font-size: 1.5rem;
+                    margin-right: 20px;
+                  }
+
+                  .end-result-image {
+                    width: 100px;
+                  }
+                </style>
+              </head>
+
+              <body>
+
+                <div class="container">
+                  <div class="end-result-container">
+                    <div class="end-result-text">
+                      End of search results
+                    </div>
+                    <img class="end-result-image"
+                      src="https://b.zmtcdn.com/web/assets/search/6d548ba48f0e4e4b46c19ad4b15a3f011615379209.jpeg"
+                      alt="Shop Icon">
+                  </div>
+                </div>
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                  <meta charset="UTF-8">
+                  <title>Explore Options Near Me</title>
+                  <link rel="stylesheet"
+                    href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+                  <style>
+                    .accordion .card {
+                      border: none;
+                      border-radius: 10px;
+                      margin-bottom: 15px;
+                      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .card-header {
+                      background-color: #fff;
+                      border-bottom: none;
+                    }
+
+                    .btn-link {
+                      color: #000;
+                      text-align: left;
+                      width: 100%;
+                      font-size: 1.1rem;
+                      font-weight: 500;
+                      text-decoration: none;
+                    }
+
+                    .btn-link:hover {
+                      text-decoration: none;
+                    }
+                  </style>
+                </head>
+
+                <body>
+                  <!DOCTYPE html>
+                  <html lang="en">
+
+                  <head>
+                    <meta charset="UTF-8">
+                    <title>Explore Options Near Me</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+                      rel="stylesheet">
+                    <style>
+                      .custom-dropdown {
+                        border: 1px solid #e0e0e0;
+                        border-radius: 8px;
+                        padding: 15px;
+                        margin-bottom: 15px;
+                      }
+
+                      .custom-dropdown .dropdown-toggle {
+                        width: 100%;
+                        text-align: left;
+                      }
+                    </style>
+                  </head>
+
+                  <body>
+
+                    <!DOCTYPE html>
+                    <html lang="en">
+
+                    <head>
+                      <meta charset="UTF-8">
+                      <title>Explore Options Near Me</title>
+                      <meta name="viewport" content="width=device-width, initial-scale=1">
+                      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+                        rel="stylesheet">
+                      <style>
+                        .custom-dropdown {
+                          border: 1px solid #e0e0e0;
+                          border-radius: 8px;
+                          padding: 0;
+                          margin-bottom: 15px;
+                        }
+
+                        .custom-dropdown .dropdown-toggle {
+                          width: 100%;
+                          text-align: left;
+                          padding: 15px;
+                          background-color: #fff;
+                          border: none;
+                          font-size: 16px;
+                          position: relative;
+                        }
+
+                        .custom-dropdown .dropdown-toggle::after {
+                          position: absolute;
+                          right: 20px;
+                          top: 50%;
+                          transform: translateY(-50%);
+                        }
+
+                        .dropdown-menu {
+                          width: 100%;
+                        }
+                      </style>
+                    </head>
+
+                    <body>
+                      <!DOCTYPE html>
+                      <html lang="en">
+
+                      <head>
+                        <meta charset="UTF-8">
+                        <title>Explore Options Near Me</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+                          rel="stylesheet">
+                        <style>
+                          .custom-dropdown {
+                            border: 1px solid #e0e0e0;
+                            border-radius: 8px;
+                            margin-bottom: 15px;
+                            background-color: #fff;
+                          }
+
+                          .custom-dropdown .dropdown-toggle {
+                            width: 100%;
+                            text-align: left;
+                            padding: 15px;
+                            background-color: transparent;
+                            border: none;
+                            font-size: 16px;
+                            position: relative;
+                          }
+
+                          .custom-dropdown .dropdown-toggle::after {
+                            position: absolute;
+                            right: 20px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                          }
+
+                          .custom-dropdown .dropdown-menu {
+                            width: 100%;
+                            border-radius: 0 0 8px 8px;
+                          }
+                        </style>
+                      </head>
+
+                      <body>
+
+                        <div class="container mt-5">
+                          <h3 class="mb-4">Explore options near me</h3>
+
+                          <div class="custom-dropdown dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Popular cuisines near me
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdown1">
+                              <a class="dropdown-item" href="#">Indian</a>
+                              <a class="dropdown-item" href="#">Chinese</a>
+                              <a class="dropdown-item" href="#">Italian</a>
+                            </div>
+                          </div>
+
+                          <div class="custom-dropdown dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdown2" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Popular restaurant types near me
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdown2">
+                              <a class="dropdown-item" href="#">Cafes</a>
+                              <a class="dropdown-item" href="#">Fine Dining</a>
+                              <a class="dropdown-item" href="#">Fast Food</a>
+                            </div>
+                          </div>
+
+                          <div class="custom-dropdown dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdown3" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Top restaurant chains
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdown3">
+                              <a class="dropdown-item" href="#">Domino's</a>
+                              <a class="dropdown-item" href="#">KFC</a>
+                              <a class="dropdown-item" href="#">Subway</a>
+                            </div>
+                          </div>
+
+                          <div class="custom-dropdown dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdown4" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Cities we deliver to
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdown4">
+                              <a class="dropdown-item" href="#">Vijayawada</a>
+                              <a class="dropdown-item" href="#">Hyderabad</a>
+                              <a class="dropdown-item" href="#">Bangalore</a>
+                            </div>
+                          </div>
+
+                          <div class="custom-dropdown dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdown5" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Popular Dishes Near Me
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdown5">
+                              <a class="dropdown-item" href="#">Biryani</a>
+                              <a class="dropdown-item" href="#">Pizza</a>
+                              <a class="dropdown-item" href="#">Burger</a>
+                            </div>
+                          </div>
+                        </div>
+                        <footer class="bg-light pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+<footer class="bg-light pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Quick Crave -->
+        <div class="col-lg-2 col-md-3 mb-4">
+           <div class="font-weight-bold" >Quick Crave</div>
+        </div>
+
+        <!-- Quick Crave -->
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="text-uppercase font-weight-bold mb-3">About Quick Crave</h6>
+          <ul class="list-unstyled text-muted small">
+            <li>Who We Are</li><li>Blog</li><li>Work With Us</li>
+            <li>Investor Relations</li><li>Report Fraud</li>
+            <li>Press Kit</li><li>Contact Us</li>
+          </ul>
+        </div>
+
+        <!-- Quick Craverse -->
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="text-uppercase font-weight-bold mb-3">Quick Craverse</h6>
+          <ul class="list-unstyled text-muted small">
+            <li>Quick Crave</li><li>Blinkit</li><li>District</li><li>Feeding India</li>
+            <li>Hyperpure</li><li>Quick Live</li><li>Quickland</li><li>Weather Union</li>
+          </ul>
+        </div>
+
+        <!-- For Restaurants -->
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="text-uppercase font-weight-bold mb-3">For Restaurants</h6>
+          <ul class="list-unstyled text-muted small">
+            <li>Partner With Us</li><li>Apps For You</li>
+          </ul>
+        </div>
+
+        <!-- Learn More -->
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="text-uppercase font-weight-bold mb-3">Learn More</h6>
+          <ul class="list-unstyled text-muted small">
+            <li>Privacy</li><li>Security</li><li>Terms</li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h6 class="text-uppercase font-weight-bold mb-3">Social Links</h6>
+          <div class="mb-3">
+            <a class="text-dark mr-2" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a class="text-dark mr-2" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+            <a class="text-dark mr-2" href="#"><i class="fab fa-x-twitter fa-lg"></i></a>
+            <a class="text-dark mr-2" href="#"><i class="fab fa-youtube fa-lg"></i></a>
+            <a class="text-dark"        href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          </div>
+          <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png"  alt="App Store"  class="img-fluid mb-2" style="max-width:140px;">
+          <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="Google Play" class="img-fluid"     style="max-width:140px;">
+        </div>
+      </div>
+
+      <!-- Country & language -->
+      <div class="d-flex justify-content-lg-end justify-content-start flex-wrap mb-4">
+        <button class="btn btn-outline-secondary btn-sm mr-2">
+          <img src="https://flagcdn.com/in.svg" width="20" class="mr-1" alt="">
+          India <i class="fas fa-chevron-down ml-1"></i>
+        </button>
+        <button class="btn btn-outline-secondary btn-sm">
+          <i class="fas fa-globe mr-1"></i> English
+          <i class="fas fa-chevron-down ml-1"></i>
+        </button>
+      </div>
+
+      <hr>
+      <p class="small text-muted text-center mb-0 px-lg-5">
+        By continuing past this page, you agree to our Terms of Service,
+        Cookie Policy, Privacy Policy and Content Policies. All trademarks are
+        properties of their respective owners. 2008–2025 © Zomato™ Ltd.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  
+   <!-- Back‑to‑top button -->
+  <a id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+
+  
+     
+  </script>
+</body>
+</html>
+                     <!-- Bootstrap 4.6 Scripts -->
+                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                        <script
+                          src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                      </body>
+
+                      </html>
+
+
+
+
+
+
+
+                      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                      <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                    </body>
+
+                    </html>
+
+
+                  </body>
+
+                  </html>
+
+
+            </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        <script>
+          function scrollLeft() {
+            document.getElementById('brandScroll').scrollBy({ left: -300, behavior: 'smooth' });
+          }
+          function scrollRight() {
+            document.getElementById('brandScroll').scrollBy({ left: 300, behavior: 'smooth' });
+          }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+      </html>
